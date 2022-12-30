@@ -1,10 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-import CardLink from '../components/cards/card-link'
+import CardLink from '../components/cards/dark-card-link'
 import TopMenu from '../components/menus/top-menu'
-import MiddleMenu from '../components/menus/middle-menu'
-import {RefObject} from "react";
+import MainHeroSection from '../components/sections/main-hero-section';
 
 export default function Home() {
     return (
@@ -17,7 +16,7 @@ export default function Home() {
             </Head>
             <main className="relative">
                 <TopMenu isVisibleMiddleMenu={true}/>
-
+                <MainHeroSection/>
                 <div className="max-w-6xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
 
                 </div>
