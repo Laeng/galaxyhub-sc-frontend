@@ -36,7 +36,7 @@ export default function fleetsIntroduceSection() {
     elementObserver(fleetsIntroduceArea2, setVisibleFleetsIntroduceArea2);
 
     return (
-        <section className="bg-blend-multiply bg-black py-8">
+        <section className="bg-blend-multiply bg-black py-16">
             <BasicContainer twoUpperClassName="" oneUpperClassName="">
                 <div
                     className={
@@ -52,7 +52,7 @@ export default function fleetsIntroduceSection() {
                         <h2 className="flex flex-row justify-center space-x-2 md:space-x-4 font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl py-2 md:py-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">
                             <span>#스타시티즌</span>
                             <span>#한국어</span>
-                            <span>#번역</span>
+                            <span>#패치</span>
                         </h2>
                         <div className="inline-block lg:flex lg:flex-col md:px-8 space-x-1.5 lg:space-x-0 lg:px-0 py-2 md:py-4 text-gray-100">
                             <span className="space-x-1.5">
@@ -111,7 +111,7 @@ export default function fleetsIntroduceSection() {
                                                         <img className="h-36 w-36 md:h-56 lg:h-72 md:w-56 lg:w-72" src={fleet.image} alt={fleet.title + ' 로고'}/>
                                                     </div>
                                                     <div className="flex flex-col h-full text-center md:text-left md:py-8">
-                                                        <h2 className="font-bold text-gray-100 text-4xl leading-relaxed">
+                                                        <h2 className="font-bold text-gray-100 text-2xl md:text-4xl leading-relaxed">
                                                             {fleet.title}
                                                         </h2>
                                                         <p className="text-gray-200 leading-relaxed">

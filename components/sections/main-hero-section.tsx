@@ -6,7 +6,7 @@ export default function mainHeroSection() {
         >
             <div
                 className="h-full bg-cover"
-                style={{backgroundImage: "linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 75%, rgba(0, 0, 0, 1))"}}
+                style={{backgroundImage: "linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 1))"}}
             >
                 <div className="flex items-center justify-center h-full w-full text-gray-300">
                     <div className="flex flex-col justify-center">
