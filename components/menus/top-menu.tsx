@@ -21,7 +21,7 @@ export default function topMenu({isVisibleMiddleMenu}: props) {
             <div className="fixed md:relative max-w-6xl mx-auto py-4 px-4 sm:px-6 md:px-8 w-full bg-white md:bg-transparent z-20 md:z-0">
                 <div className="flex justify-between items-center md:block w-full">
                     <div className="md:flex md:items-end md:justify-between md:pt-4" ref={titleArea}>
-                        <div className="flex md:block md:font-black md:text-4xl space-x-1 md:space-x-0 md:space-y-0 text-gray-100">
+                        <div className="flex md:block md:font-black md:text-4xl space-x-1 md:space-x-0 md:space-y-0 md:text-gray-100">
                             <p className="md:leading-none">스타 시티즌</p>
                             <p className="md:leading-none">유저 한국어 프로젝트</p>
                         </div>
@@ -48,7 +48,7 @@ export default function topMenu({isVisibleMiddleMenu}: props) {
                         <div className={classNames({
                             'absolute top-0 left-0 md:py-4 transition-transform md:transition-none duration-200 overflow-hidden z-30': true,
                             'md:relative md:top-auto md:left-auto': isVisibleTitleArea,
-                            'md:fixed md:left-auto md:max-w-6xl md:mx-auto py-4 md:px-8 md:w-full': !isVisibleTitleArea,
+                            'md:fixed md:left-auto md:max-w-6xl md:mx-auto py-4 md:px-8': !isVisibleTitleArea,
                             'translate-y-0 opacity-100 w-full md:w-auto': isVisibleNavigation,
                             'translate-y-[100vh] opacity-0 md:opacity-100 md:translate-y-0 w-full': !isVisibleNavigation
                         })}>
@@ -64,7 +64,7 @@ export default function topMenu({isVisibleMiddleMenu}: props) {
                                     </button>
                                 </div>
                                 <div className="overflow-auto h-screen md:h-auto max-h-[calc(100vh-3.75rem)] md:max-h-fit">
-                                    <ul className="navigation md:flex w-full text-center border-b md:border-0 border-gray-300 text-gray-100 font-medium">
+                                    <ul className="navigation md:flex w-full text-center border-b md:border-0 border-gray-300 md:text-gray-100 font-medium">
                                         <li className="group md:float-left text-lg md:text-base py-2 md:py-0 md:pr-4 border-t md:border-0 border-gray-300">
                                             저작권 안내
                                         </li>
