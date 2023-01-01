@@ -4,6 +4,7 @@ import Image from 'next/image'
 import CardLink from '../components/cards/dark-card-link'
 import TopMenu from '../components/menus/top-menu'
 import MainHeroSection from '../components/sections/main-hero-section';
+import FleetsIntroduceSection from '../components/sections/fleets-introduce-section'
 
 export default function Home() {
     return (
@@ -17,6 +18,8 @@ export default function Home() {
             <main className="relative">
                 <TopMenu isVisibleMiddleMenu={true}/>
                 <MainHeroSection/>
+                <FleetsIntroduceSection/>
+
                 <div className="max-w-6xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
 
                 </div>
