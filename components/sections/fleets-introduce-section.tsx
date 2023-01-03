@@ -56,7 +56,7 @@ export default function fleetsIntroduceSection() {
                         </h2>
                         <div className="inline-block lg:flex lg:flex-col md:px-8 space-x-1.5 lg:space-x-0 lg:px-0 py-2 md:py-4 text-gray-100">
                             <span className="space-x-1.5">
-                                <span className="underline decoration-rose-600 underline-offset-1 decoration-wavy">'초절정 갓겜'</span>
+                                <span className="underline decoration-blue-500 underline-offset-1 decoration-wavy">'초절정 갓겜'</span>
                                 <span>스타 시티즌을 더 많은 분들과 재밌게 즐기고 싶은 마음으로</span>
                                 <span>샤타곤</span>
                                 <span>·</span>
