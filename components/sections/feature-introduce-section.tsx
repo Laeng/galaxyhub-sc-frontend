@@ -3,6 +3,8 @@ import elementObserver from "../utiles/elementObserver";
 import classNames from "classnames";
 import {useRef, useState} from "react";
 
+import FeatureCard from '../cards/feature-card'
+
 export default function featureIntroduceSection() {
     const [isVisibleFeatureIntroduceArea1, setVisibleFeatureIntroduceArea1] = useState(false);
     const [isVisibleFeatureIntroduceArea2, setVisibleFeatureIntroduceArea2] = useState(false);
@@ -59,105 +61,102 @@ export default function featureIntroduceSection() {
                             className="overflow-x-hidden rounded-2xl hover:transform hover:-translate-y-0.5 hover:shadow-lg hover:shadow-pink-500/50"
                             ref={featureIntroduceArea2}
                         >
-                            <div
-                                className={classNames({
-                                    'grid grid-cols-1 lg:grid-cols-2 divide-x divide-white/10 bg-blend-multiply bg-white/10 rounded-2xl border border-white/10 w-full': true,
-                                    'transition duration-400 delay-500': true,
-                                    'translate-x-0 duration-100': isVisibleFeatureIntroduceArea2,
-                                    '-translate-x-full opacity-0': !isVisibleFeatureIntroduceArea2
-                                })}
-                            >
-                                <div className="p-16 flex flex-col">
-                                    <div className="text-left space-y-2">
-                                        <div className="font-black text-5xl text-transparent bg-clip-text bg-gradient-to-br from-pink-500 to-pink-600">
-                                            <h3>Shatagon</h3>
-                                            <h3>Patcher</h3>
-                                        </div>
-                                        <p className="font-bold text-lg text-gray-100">스타 시티즌 유저 한국어 패치 설치 프로그램</p>
-                                    </div>
-                                    <div className="mt-auto text-left flex space-x-4">
-                                        <a
-                                            className="focus:ring-4 focus:outline-none focus:ring-pink-800 font-medium rounded-full text-xs md:text-sm text-gray-100 py-2.5 px-5 text-center bg-pink-600 hover:bg-pink-700 py-4"
-                                            href="#"
-                                            target="_blank"
-                                        >
-                                            다운로드
-                                        </a>
-                                        <a
-                                            className="focus:ring-4 focus:outline-none focus:ring-gray-500 font-medium rounded-full text-xs md:text-sm text-black py-2.5 px-5 text-center bg-white hover:bg-gray-200 py-4"
-                                            href="#"
-                                            target="_blank"
-                                        >
-                                            GitHub
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="py-8 px-16">
-                                    <ul className="divide-y divide-white/10 text-gray-100 text-left">
-                                        <li className="py-8">
-                                            <h3 className="text-white/50">패치 자동화</h3>
-                                            <p>한국어 패치 파일를 간편하게 적용할 수 있어요.</p>
-                                        </li>
-                                        <li className="py-8">
-                                            <h3 className="text-white/50">포터블 프로그램</h3>
-                                            <p>프로그램을 설치할 필요가 없어요. 압축을 풀고 바로 실행하세요.</p>
-                                        </li>
-                                        <li className="py-8">
-                                            <h3 className="text-white/50">오픈 소스</h3>
-                                            <p>개발자이신가요? 어서오세요! 여러분의 기여를 환영합니다.</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <FeatureCard
+                                contents={{
+                                    title: 'Shatagon Patcher',
+                                    description: '스타 시티즌 유저 한국어 패치 설치 프로그램',
+                                    links: [
+                                        {
+                                            title: '다운로드',
+                                            url: '#',
+                                            target: '_blank',
+                                            style: 'text-gray-100 bg-pink-600 hover:bg-pink-700 focus:ring-pink-800',
+                                            isLink: true
+                                        },
+                                        {
+                                            title: '사용법',
+                                            url: '#',
+                                            target: '_blank',
+                                            style: 'text-gray-100 bg-pink-600 hover:bg-pink-700 focus:ring-pink-800',
+                                            isLink: true
+                                        },
+                                        {
+                                            title: 'GitHub',
+                                            url: 'https://github.com/laeng',
+                                            target: '_blank',
+                                            style: 'focus:ring-gray-500 bg-white hover:bg-gray-200',
+                                            isLink: false
+                                        }
+                                    ],
+                                    features: [
+                                        {
+                                            title: '패치 자동화',
+                                            description: '한국어 패치 파일를 간편하게 적용할 수 있어요.'
+                                        },
+                                        {
+                                            title: '포터블 프로그램',
+                                            description: '프로그램을 설치할 필요가 없어요. 압축을 풀고 바로 실행하세요.'
+                                        },
+                                        {
+                                            title: '오픈 소스',
+                                            description: '개발자이신가요? 어서오세요! 여러분의 기여를 환영합니다.'
+                                        }
+                                    ]
+                                }}
+
+                                styles={{
+                                    card: classNames({
+                                        'transition duration-400 delay-500': true,
+                                        'translate-x-0 duration-100': isVisibleFeatureIntroduceArea2,
+                                        '-translate-x-full opacity-0': !isVisibleFeatureIntroduceArea2
+                                    }),
+                                    title: 'text-transparent bg-clip-text bg-gradient-to-br from-pink-500 to-pink-600'
+                                }}
+                            />
                         </div>
 
                         <div
                             className="overflow-x-hidden rounded-2xl hover:transform hover:-translate-y-0.5 hover:shadow-lg hover:shadow-indigo-500/50"
                             ref={featureIntroduceArea3}
                         >
-                            <div
-                                className={classNames({
-                                    'grid grid-cols-1 lg:grid-cols-2 divide-x divide-white/10 bg-blend-multiply bg-white/10 rounded-2xl border border-white/10 w-full': true,
-                                    'transition duration-400 delay-500': true,
-                                    'translate-x-0 duration-100': isVisibleFeatureIntroduceArea3,
-                                    'translate-x-full opacity-0': !isVisibleFeatureIntroduceArea3
-                                })}
-                            >
-                                <div className="p-16 flex flex-col">
-                                    <div className="text-left space-y-2">
-                                        <div className="font-black text-5xl text-transparent bg-clip-text bg-gradient-to-br from-indigo-500 to-indigo-600">
-                                            <h3>StarCitizenKR</h3>
-                                            <h3>Discord</h3>
-                                        </div>
-                                        <p className="font-bold text-lg text-gray-100">스타 시티즌과 유저 한국어 패치에 대해 소통 할 수 있는 곳</p>
-                                    </div>
-                                    <div className="mt-auto text-left flex space-x-4">
-                                        <a
-                                            className="focus:ring-4 focus:outline-none focus:ring-indigo-800 font-medium rounded-full text-xs md:text-sm text-gray-100 py-2.5 px-5 text-center bg-indigo-600 hover:bg-indigo-700 py-4"
-                                            href="#"
-                                            target="_blank"
-                                        >
-                                            Discord
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="py-8 px-16">
-                                    <ul className="divide-y divide-white/10 text-gray-100 text-left">
-                                        <li className="py-8">
-                                            <h3 className="text-white/50">오역, 오탈자 제보</h3>
-                                            <p>유저 한국어 패치 문제를 발견했다면 알려주세요.</p>
-                                        </li>
-                                        <li className="py-8">
-                                            <h3 className="text-white/50">스타 시티즌 소통</h3>
-                                            <p>스타 시티즌 문제나 궁금한 것을 함께 해결할 수 있어요.</p>
-                                        </li>
-                                        <li className="py-8">
-                                            <h3 className="text-white/50">암호 키 확인하기</h3>
-                                            <p>한국어 패치 설치에 필요한 암호 키를 확인할 수 있어요.</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <FeatureCard
+                                contents={{
+                                    title: 'StarCitizenKR Discord',
+                                    description: '스타 시티즌과 유저 한국어 패치에 대해 소통 할 수 있는 곳',
+                                    links: [
+                                        {
+                                            title: 'Discord',
+                                            url: 'https://discord.com',
+                                            target: '_blank',
+                                            style: 'text-gray-100 focus:ring-indigo-800 bg-indigo-600 hover:bg-indigo-700',
+                                            isLink: false
+                                        }
+                                    ],
+                                    features: [
+                                        {
+                                            title: '오역, 오탈자 제보',
+                                            description: '유저 한국어 패치 문제를 발견했다면 알려주세요.'
+                                        },
+                                        {
+                                            title: '스타 시티즌 소통',
+                                            description: '스타 시티즌 문제나 궁금한 것을 함께 해결할 수 있어요.'
+                                        },
+                                        {
+                                            title: '암호 키 확인하기',
+                                            description: '한국어 패치 설치에 필요한 암호 키를 확인할 수 있어요.'
+                                        }
+                                    ]
+                                }}
+
+                                styles={{
+                                    card: classNames({
+                                        'transition duration-400 delay-500': true,
+                                        'translate-x-0 duration-100': isVisibleFeatureIntroduceArea3,
+                                        'translate-x-full opacity-0': !isVisibleFeatureIntroduceArea3
+                                    }),
+                                    title: 'text-transparent bg-clip-text bg-gradient-to-br from-indigo-500 to-indigo-600'
+                                }}
+                            />
                         </div>
                     </div>
                 </div>
