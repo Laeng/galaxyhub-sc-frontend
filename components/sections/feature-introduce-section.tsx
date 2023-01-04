@@ -5,6 +5,8 @@ import {useRef, useState} from "react";
 
 import FeatureCard from '../cards/feature-card'
 
+import hash from "../utiles/hash";
+
 export default function featureIntroduceSection() {
     const [isVisibleFeatureIntroduceArea1, setVisibleFeatureIntroduceArea1] = useState(false);
     const [isVisibleFeatureIntroduceArea2, setVisibleFeatureIntroduceArea2] = useState(false);
@@ -18,7 +20,6 @@ export default function featureIntroduceSection() {
     elementObserver(featureIntroduceArea1, setVisibleFeatureIntroduceArea1);
     elementObserver(featureIntroduceArea2, setVisibleFeatureIntroduceArea2);
     elementObserver(featureIntroduceArea3, setVisibleFeatureIntroduceArea3);
-
 
     return (
         <section className="bg-black py-16">
@@ -112,6 +113,8 @@ export default function featureIntroduceSection() {
                                     }),
                                     title: 'text-transparent bg-clip-text bg-gradient-to-br from-pink-500 to-pink-600'
                                 }}
+
+                                key={hash('feature one')}
                             />
                         </div>
 
@@ -156,6 +159,8 @@ export default function featureIntroduceSection() {
                                     }),
                                     title: 'text-transparent bg-clip-text bg-gradient-to-br from-indigo-500 to-indigo-600'
                                 }}
+
+                                key={hash('feature two')}
                             />
                         </div>
                     </div>

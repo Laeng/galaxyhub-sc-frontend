@@ -1,17 +1,20 @@
 import classNames from "classnames";
 import Link from "next/link";
+import hash from "../utiles/hash";
 
 interface props {
-    contents: {
-        title: string,
-        description: string,
-        links: link[]
-        features: feature[]
-    },
+    contents: contents,
     styles?: styles
 }
 
-interface link {
+export interface contents {
+    title: string,
+    description: string,
+    links: link[]
+    features: feature[]
+}
+
+export interface link {
     title: string,
     url: string,
     target: '_blank'|'_self'|'_parent'|'_top',
@@ -19,12 +22,12 @@ interface link {
     isLink: boolean
 }
 
-interface feature {
+export interface feature {
     title: string,
     description: string
 }
 
-interface styles {
+export interface styles {
     card: string
     title: string
 }
@@ -64,6 +67,7 @@ export default function featureCard({contents, styles = defaultStyle}: props) {
                                 )}
                                 href={url}
                                 target={target}
+                                key={hash(title + ' - link')}
                             >
                                 {title}
                             </a>
@@ -74,6 +78,7 @@ export default function featureCard({contents, styles = defaultStyle}: props) {
                                 )}
                                 href={url}
                                 target={target}
+                                key={hash(title + ' - link')}
                             >
                                 {title}
                             </Link>
@@ -83,7 +88,7 @@ export default function featureCard({contents, styles = defaultStyle}: props) {
             <div className="py-8 px-16">
                 <ul className="divide-y divide-white/10 text-gray-100 text-left">
                     {Object.values(contents.features).map(({title, description}: feature) => (
-                        <li className="py-8">
+                        <li className="py-8" key={hash(title + ' - feature')}>
                             <h3 className="text-white/50">{title}</h3>
                             <p>{description}</p>
                         </li>
