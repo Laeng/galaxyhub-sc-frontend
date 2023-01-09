@@ -4,6 +4,7 @@ import classNames from "classnames";
 import {useRef, useState} from "react";
 
 import FeatureCard from '../cards/feature-card'
+import GradientHeading from '../heading/gradient-heading'
 
 import hash from "../utiles/hash";
 
@@ -22,7 +23,7 @@ export default function featureIntroduceSection() {
     elementObserver(featureIntroduceArea3, setVisibleFeatureIntroduceArea3);
 
     return (
-        <section className="bg-black py-16">
+        <section className="py-16 lg:min-h-screen lg:flex lg:items-center lg:justify-center">
             <BasicContainer twoUpperClassName="" oneUpperClassName="overflow-x-hidden">
                 <div
                     className="flex items-center justify-center text-center w-full py-4"
@@ -31,20 +32,18 @@ export default function featureIntroduceSection() {
                         <div
                             className={
                                 classNames({
-                                    'transition duration-50 delay-500': true,
+                                    'transition duration-50 delay-50': true,
                                     'translate-x-0 opacity-100': isVisibleFeatureIntroduceArea1,
                                     'translate-x-full opacity-0': !isVisibleFeatureIntroduceArea1,
                                 })
                             }
                         >
-                            <h2 className="flex flex-row justify-center space-x-2 md:space-x-4 font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl py-2 md:py-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-pink-500">
-                                퀀텀 속도로 적용하기
-                            </h2>
+                            <GradientHeading title="퀀텀 속도로 적용하기" className="from-indigo-500 to-pink-500"/>
                         </div>
                         <div
                             className={
                                 classNames({
-                                    'transition-opacity duration-200 delay-700': true,
+                                    'transition-opacity duration-200 delay-100': true,
                                     'opacity-100': isVisibleFeatureIntroduceArea1,
                                     'opacity-0': !isVisibleFeatureIntroduceArea1,
                                 })
@@ -107,7 +106,7 @@ export default function featureIntroduceSection() {
 
                                 styles={{
                                     card: classNames({
-                                        'transition duration-400 delay-500': true,
+                                        'transition duration-400 delay-200': true,
                                         'translate-x-0 duration-100': isVisibleFeatureIntroduceArea2,
                                         '-translate-x-full opacity-0': !isVisibleFeatureIntroduceArea2
                                     }),
