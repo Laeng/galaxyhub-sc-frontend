@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-import CardLink from '../components/cards/dark-card-link'
+import CardLink from '../components/cards/link-card'
 import TopMenu from '../components/menus/top-menu'
 import MainHeroSection from '../components/sections/main-hero-section';
 import FleetsIntroduceSection from '../components/sections/fleets-introduce-section'
+import FeatureIntroduceSection from '../components/sections/feature-introduce-section'
 
 export default function Home() {
     return (
@@ -15,15 +16,12 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <main className="relative">
+            <main className="relative bg-black">
                 <TopMenu isVisibleMiddleMenu={true}/>
                 <MainHeroSection/>
                 <FleetsIntroduceSection/>
-
-                <div className="max-w-6xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-
-                </div>
-                <div className="h-[3000px]"></div>
+                <FeatureIntroduceSection/>
+                <div className="h-[3000px] bg-black"></div>
             </main>
         </>
     )

@@ -3,6 +3,7 @@ import elementObserver from "../utiles/elementObserver";
 import {useRef, useState} from "react";
 import classNames from "classnames";
 import {Tab} from '@headlessui/react';
+import hash from "../utiles/hash";
 
 export default function fleetsIntroduceSection() {
     const [isVisibleFleetsIntroduceArea1, setVisibleFleetsIntroduceArea1] = useState(false);
@@ -36,7 +37,7 @@ export default function fleetsIntroduceSection() {
     elementObserver(fleetsIntroduceArea2, setVisibleFleetsIntroduceArea2);
 
     return (
-        <section className="bg-blend-multiply bg-black py-16">
+        <section className="bg-blend-multiply bg-black py-16 lg:min-h-screen lg:flex lg:items-center lg:justify-center" id="introduce">
             <BasicContainer twoUpperClassName="" oneUpperClassName="">
                 <div
                     className={
@@ -49,7 +50,7 @@ export default function fleetsIntroduceSection() {
                     ref={fleetsIntroduceArea1}
                 >
                     <div className="">
-                        <h2 className="flex flex-row justify-center space-x-2 md:space-x-4 font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl py-2 md:py-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">
+                        <h2 className="md:flex md:flex-row md:justify-center md:space-x-2 md:space-x-4 font-black text-3xl md:text-4xl lg:text-5xl py-2 md:py-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">
                             <span>#스타시티즌</span>
                             <span>#한국어</span>
                             <span>#패치</span>
@@ -103,12 +104,12 @@ export default function fleetsIntroduceSection() {
                                     <Tab.Panels className="w-full md:w-3/4 lg:w-2/3">
                                         {Object.values(fleets).map((fleet, id) => (
                                             <Tab.Panel
-                                                key={id}
+                                                key={hash(fleet.title)}
                                                 className="flex item-center justify-center"
                                             >
                                                 <div className="grid grid-cols-1 md:grid-cols-2 items-center w-full">
                                                     <div className="flex justify-center md:justify-end md:order-last">
-                                                        <img className="h-36 w-36 md:h-56 lg:h-72 md:w-56 lg:w-72" src={fleet.image} alt={fleet.title + ' 로고'}/>
+                                                        <img className="h-40 w-40 md:h-56 lg:h-72 md:w-56 lg:w-72" src={fleet.image} alt={fleet.title + ' 로고'}/>
                                                     </div>
                                                     <div className="flex flex-col h-full text-center md:text-left md:py-8">
                                                         <h2 className="font-bold text-gray-100 text-2xl md:text-4xl leading-relaxed">
@@ -117,9 +118,9 @@ export default function fleetsIntroduceSection() {
                                                         <p className="text-gray-200 leading-relaxed">
                                                             {fleet.description}
                                                         </p>
-                                                        <div className="mt-auto py-4">
+                                                        <div className="md:mt-auto py-4">
                                                             <a
-                                                                className="focus:ring-4 focus:outline-none focus:ring-cyan-800 font-medium rounded-full text-xs md:text-sm text-gray-100 py-2.5 px-5 text-center bg-sky-500 hover:bg-sky-600 py-4"
+                                                                className="focus:ring-4 focus:outline-none focus:ring-cyan-800 font-medium rounded-full text-sm md:text-sm text-gray-100 px-5 py-2.5 text-center bg-sky-500 hover:bg-sky-600 py-4"
                                                                 href={fleet.url}
                                                                 target="_blank"
                                                             >
