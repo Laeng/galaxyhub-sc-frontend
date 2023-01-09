@@ -2,8 +2,7 @@ import {useRef, useState} from "react";
 import classNames from "classnames";
 import elementObserver from "../utiles/elementObserver";
 import MiddleMenu from "../menus/middle-menu";
-import CardLink from "../cards/dark-card-link";
-import GalaxyhubLogo from "../logo/galaxyhub-logo"
+import GalaxyhubLogo from "../brands/galaxyhub-logo"
 
 interface props {
     isVisibleMiddleMenu: boolean
