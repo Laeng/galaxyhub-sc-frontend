@@ -4,6 +4,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .btn {
+        @apply py-2.5 px-5 text-sm font-medium focus:outline-none
+    }
+
+    .btn-white {
+        @apply text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700
+    }
+
+    .btn-rose {
+        @apply text-white bg-rose-600 hover:bg-rose-700 focus:ring-4 focus:ring-rose-300 dark:focus:ring-rose-900
+    }
+
+    .btn-blue {
+        @apply text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900
+    }
+
+    .btn-green {
+        @apply text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 dark:focus:ring-green-900
+    }
+
+    .btn-indigo {
+        @apply text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-300 dark:focus:ring-indigo-900
+    }
+}
+
 html {
     scroll-behavior: smooth
 }
+
