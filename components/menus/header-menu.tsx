@@ -34,12 +34,12 @@ export default function HeaderMenu({}: props) {
             className: 'md:hover:text-blue-700 dark:md:hover:text-blue-500'
         },
         {
-            title: '디스코드',
+            title: '갤러리',
             href: '',
             className: 'md:hover:text-blue-700 dark:md:hover:text-blue-500'
         },
         {
-            title: '갤러리',
+            title: '디스코드',
             href: '',
             className: 'md:hover:text-blue-700 dark:md:hover:text-blue-500'
         },
