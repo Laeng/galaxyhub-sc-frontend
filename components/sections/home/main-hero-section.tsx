@@ -1,8 +1,8 @@
 import classNames from "classnames";
-import styles from "../../../styles/sections/home/main-hero-section.module.css"
-import {useState} from "react";
+import {useRef, useState} from "react";
 import hash from "../../utiles/hash";
 import Link from "next/link";
+
 
 interface props {
 
@@ -56,11 +56,13 @@ export default function MainHeroSection() {
     ]);
 
     return (
-        <section className="flex items-center justify-center w-full">
+        <section className={classNames(
+            'flex items-center justify-center w-full',
+        )}>
             <div className={classNames(
-                    'max-w-6xl mx-auto py-4 px-4 w-full mt-16',
-                    'sm:px-6',
-                    'md:relative md:mt-40 md:px-8'
+                'max-w-6xl mx-auto py-4 px-4 w-full mt-16',
+                'sm:px-6',
+                'md:relative md:mt-40 md:px-8'
             )}>
                 <div className={classNames(
                     'grid grid-cols-1 gap-1 p-1 rounded-2xl bg-041bed dark:bg-white text-041bed dark:text-white',
@@ -83,7 +85,7 @@ export default function MainHeroSection() {
                                 'lg:justify-start lg:items-start'
                             )}>
                                 <p className={classNames(
-                                    'font-black text-transparent bg-clip-text bg-gradient-to-tr from-blue-600 to-purple-600',
+                                    'font-black text-transparent bg-clip-text bg-gradient-to-tr from-indigo-600 to-indigo-600',
                                     'lg:text-9xl'
                                 )}>
                                     75.8%
@@ -189,6 +191,42 @@ export default function MainHeroSection() {
                             </div>
                         </div>
                     ))}
+
+                    <div className={classNames(
+                        'rounded-xl flex flex-col bg-white dark:bg-041bed',
+                        'lg:col-span-12 lg:row-span-1 lg:p-8'
+                    )}>
+                        <div className={classNames(
+                            'space-y-2',
+                        )}>
+                            <p className={classNames(
+                                'text-xl font-bold'
+                            )}>
+                                DISCLAIMER
+                            </p>
+                            <ul className={classNames(
+                                'text-sm font-base text-gray-700 dark:text-gray-400 space-y-1'
+                            )}>
+                                <li className={classNames(
+
+                                )}>
+                                    This site is not endorsed by or affiliated with the Cloud Imperium or Roberts Space Industries group of companies. Star Citizen®, Squadron 42®, Roberts Space Industries®, and Cloud Imperium® are registered trademarks of Cloud Imperium Rights LLC. All rights reserved.
+                                </li>
+                                <li className={classNames(
+
+                                )}>
+                                    본 사이트는 Cloud Imperium 또는 Roberts Space Industries 그룹과 보증 및 제휴 관계가 아닙니다. Star Citizen®, Squadron 42®, Roberts Space Industries® 및 Cloud Imperium®은 Cloud Imperium Rights LLC의 등록 상표이며 모든 권리를 보유하고 있습니다.
+                                </li>
+                                <li className={classNames(
+
+                                )}>
+                                    © 2020 스타 시티즌 유저 한국어 프로젝트 All rights reserved.
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
