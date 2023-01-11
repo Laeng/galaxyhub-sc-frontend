@@ -33,7 +33,7 @@ export default function MainHeroSection() {
             'hrefClassName': 'btn btn-blue rounded-full'
         },
         {
-            'description': '스타 시티즌에 대한 한국어 영상 컨탠츠를 한번에 볼 수 있습니다. 공략이나 소소한 팁 그리고 재미를 찾아보세요.',
+            'description': '스타 시티즌에 대한 한국어 영상 컨탠츠를 한번에 볼 수 있습니다.',
             'title': 'LIVE',
             'target': '_blank',
             'href': '#',
@@ -65,12 +65,15 @@ export default function MainHeroSection() {
                 'md:relative md:mt-40 md:px-8'
             )}>
                 <div className={classNames(
-                    'grid grid-cols-1 gap-1 p-1 rounded-2xl bg-041bed dark:bg-white text-041bed dark:text-white',
+                    'grid grid-cols-1 gap-4 text-041bed dark:text-white',
+                    'md:grid-cols-3 md:p-1 md:gap-1 md:rounded-2xl md:bg-041bed dark:md:bg-white',
                     'lg:grid-cols-12'
                 )}>
                     <div className={classNames(
-                            'rounded-xl flex flex-col bg-white dark:bg-041bed',
-                            'lg:col-span-8 lg:row-span-2 lg:p-8'
+                        'rounded-xl flex flex-col bg-white dark:bg-041bed p-4 border border-gray-300 dark:border-gray-700',
+                        'md:col-span-3',
+                        'lg:col-span-8 lg:row-span-2 lg:border-0',
+                        'xl:p-8'
                     )}>
                         <div className={classNames(
                             ''
@@ -85,8 +88,8 @@ export default function MainHeroSection() {
                                 'lg:justify-start lg:items-start'
                             )}>
                                 <p className={classNames(
-                                    'font-black text-transparent bg-clip-text bg-gradient-to-tr from-indigo-600 to-indigo-600',
-                                    'lg:text-9xl'
+                                    'font-black text-transparent bg-clip-text bg-gradient-to-tr from-indigo-600 to-indigo-600 text-7xl',
+                                    'md:text-9xl'
                                 )}>
                                     75.8%
                                 </p>
@@ -100,11 +103,9 @@ export default function MainHeroSection() {
                                     </svg>
                                 </p>
                             </div>
-
-
                         </div>
                         <div className={classNames(
-                            'font-medium',
+                            'font-medium mt-2',
                             'lg:mt-auto'
                         )}>
                             <ul>
@@ -122,35 +123,40 @@ export default function MainHeroSection() {
                         </div>
                     </div>
                     <div className={classNames(
-                        'rounded-xl bg-white dark:bg-041bed',
-                        'lg:p-8 lg:col-span-4 lg:flex lg:items-center'
+                        'rounded-xl bg-white dark:bg-041bed p-4 border border-gray-300 dark:border-gray-700',
+                        'md:col-span-2',
+                        'lg:col-span-4 lg:flex lg:items-center lg:border-0',
+                        'xl:p-8'
                     )}>
                         <div className={classNames(
-                            'flex flex-col',
+                            'flex flex-col space-y-2',
+                            'md:space-y-4',
                             'lg:space-y-8'
                         )}>
-                            <div>
+                            <div className={classNames(
+
+                            )}>
                                 <p className={classNames(
                                     'font-medium leading-4'
                                 )}>
                                     현재 버전
                                 </p>
                                 <p className={classNames(
-                                    'font-medium',
-                                    'lg:text-2xl'
+                                    'font-medium text-2xl'
                                 )}>
                                     0.37.2 (for 3.17.4-LIVE)
                                 </p>
                             </div>
-                            <div>
+                            <div className={classNames(
+
+                            )}>
                                 <p className={classNames(
                                     'font-medium leading-4'
                                 )}>
                                     릴리즈 날짜
                                 </p>
                                 <p className={classNames(
-                                    'font-medium',
-                                    'lg:text-2xl'
+                                    'font-medium text-2xl'
                                 )}>
                                     2022년 12월 20일
                                 </p>
@@ -160,18 +166,17 @@ export default function MainHeroSection() {
 
                     {Object.values(cards).map((card, id) => (
                         <div className={classNames(
-                            'font-medium rounded-xl bg-white dark:bg-041bed',
-                            'lg:p-4 lg:col-span-4',
+                            'font-medium rounded-xl bg-white dark:bg-041bed p-4 border border-gray-300 dark:border-gray-700',
+                            'lg:col-span-4 lg:border-0',
                             'xl:p-8',
                             {
-                                'lg:row-span-2': id == 3
+                                'md:row-span-2': id == 3
                             }
                         )} key={hash(card.title)}>
                             <div className={classNames(
-                                'flex flex-col',
+                                'flex flex-col h-28',
                                 {
-                                    'h-28': id !== 3,
-                                    'h-28 md:h-full': id === 3
+                                    'md:h-full': id === 3
                                 }
                             )}>
                                 <p className={classNames(
@@ -193,8 +198,9 @@ export default function MainHeroSection() {
                     ))}
 
                     <div className={classNames(
-                        'rounded-xl flex flex-col bg-white dark:bg-041bed',
-                        'lg:col-span-12 lg:row-span-1 lg:p-8'
+                        'rounded-xl flex flex-col bg-white dark:bg-041bed p-4 border border-gray-300 dark:border-gray-700',
+                        'md:col-span-3',
+                        'lg:col-span-12 lg:row-span-1 lg:p-8 lg:border-0'
                     )}>
                         <div className={classNames(
                             'space-y-2',
@@ -222,12 +228,9 @@ export default function MainHeroSection() {
                                 )}>
                                     © 2020 스타 시티즌 유저 한국어 프로젝트 All rights reserved.
                                 </li>
-
                             </ul>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </section>
