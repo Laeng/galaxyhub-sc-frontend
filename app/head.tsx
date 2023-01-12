@@ -1,4 +1,3 @@
-import HeadTags from "./headTags";
 import {NextSeo} from "next-seo";
 import {NEXT_SEO_DEFAULT} from "../next-seo.config";
 

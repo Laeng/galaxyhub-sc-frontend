@@ -1,5 +1,4 @@
 import './globals.css'
-import HeadTags from "./headTags";
 import {ReactNode} from "react";
 import HeaderSection from "../components/sections/header-section";
 import classNames from "classnames";
