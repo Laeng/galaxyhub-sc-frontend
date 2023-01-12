@@ -1,6 +1,5 @@
+import "server-only";
 import classNames from "classnames";
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
 
 export default function TranslationProgressDocument() {
     const data = {

@@ -5,15 +5,10 @@ import {useRef, useState} from "react";
 
 import GalaxyhubLogo from "../brands/galaxyhub-logo";
 import ElementObserver from "../utiles/elementObserver";
-import Link from "next/link";
 import hash from "../utiles/hash";
 import LinkButton from "../bottons/link-button";
 
-export interface props {
-
-}
-
-export default function HeaderSection({}: props) {
+export default function HeaderSection() {
     const [isVisibleTitleArea, setVisibleTitleArea] = useState(true);
     const [isVisibleNavigation, setVisibleNavigation] = useState(false);
     const headerMenuTitle = useRef<HTMLDivElement>(null);
@@ -205,11 +200,11 @@ export default function HeaderSection({}: props) {
                                             )}>
                                                 powered by
                                             </p>
-                                            <p className={classNames(
-                                                'leading-none text-xl font-bold h-5'
+                                            <div className={classNames(
+                                                'h-4'
                                             )}>
-                                                Galaxyhub
-                                            </p>
+                                                <GalaxyhubLogo/>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
