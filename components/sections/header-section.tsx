@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from "classnames";
 import {useRef, useState} from "react";
 
@@ -10,14 +12,14 @@ export interface props {
 
 }
 
-export default function HeaderMenu({}: props) {
+export default function HeaderSection({}: props) {
     const [isVisibleTitleArea, setVisibleTitleArea] = useState(true);
     const [isVisibleNavigation, setVisibleNavigation] = useState(false);
     const headerMenuTitle = useRef<HTMLDivElement>(null);
 
     ElementObserver.isIntersecting(headerMenuTitle, setVisibleTitleArea);
 
-    let [menus] = useState([
+    let menus = [
         {
             title: '저작권 안내',
             href: '',
@@ -58,10 +60,10 @@ export default function HeaderMenu({}: props) {
             href: '',
             className: 'md:float-left md:flex md:items-center md:justify-center md:btn md:btn-blue md:rounded-full md:h-9'
         }
-    ]);
+    ];
 
     return (
-        <div className="absolute flex justify-center w-full z-10">
+        <section className="absolute flex justify-center w-full z-10">
             <div className={classNames(
                 'fixed max-w-6xl mx-auto py-4 px-4 w-full bg-041bed border-b border-gray-800 z-20',
                 'sm:px-6',
@@ -216,6 +218,6 @@ export default function HeaderMenu({}: props) {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

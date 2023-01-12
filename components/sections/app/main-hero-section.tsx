@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import {useRef, useState} from "react";
 import hash from "../../utiles/hash";
 import Link from "next/link";
 
@@ -10,7 +9,7 @@ interface props {
 
 export default function MainHeroSection() {
 
-    const [cards] = useState([
+    const cards = [
         {
             'description': '유저 한국어 프로젝트를 도와주신 분들과 제작 참여자를 소개합니다.',
             'title': '바로가기',
@@ -53,7 +52,7 @@ export default function MainHeroSection() {
             'href': '#',
             'hrefClassName': 'btn btn-indigo bg-[#5865F2] rounded-full'
         },
-    ]);
+    ];
 
     return (
         <section className={classNames(
