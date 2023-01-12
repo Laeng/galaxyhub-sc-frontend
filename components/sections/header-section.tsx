@@ -17,7 +17,7 @@ export default function HeaderSection({}: props) {
     const [isVisibleNavigation, setVisibleNavigation] = useState(false);
     const headerMenuTitle = useRef<HTMLDivElement>(null);
 
-    ElementObserver.isIntersecting(headerMenuTitle, setVisibleTitleArea);
+    ElementObserver(headerMenuTitle, setVisibleTitleArea);
 
     let menus = [
         {
@@ -94,7 +94,7 @@ export default function HeaderSection({}: props) {
                         <a className={classNames(
                             'hidden mix-blend-multiply group rounded-md border border-gray-400/50 hover:bg-white/10 py-2.5 px-3.5 dark:md:text-white',
                             'md:block dark:md:text-white'
-                        )} target="_blank" href="http://galaxyhub.kr">
+                        )} target="_blank" href="http://galaxyhub.kr" rel="noreferrer">
                             <p className={classNames(
                                 'font-medium text-xs mb-0.5'
                             )}>

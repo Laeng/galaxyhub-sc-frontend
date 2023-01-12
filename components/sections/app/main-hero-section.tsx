@@ -190,7 +190,7 @@ export default function MainHeroSection() {
                                     {
                                         card.target === '_self'
                                             ? <Link href={card.href} target={card.target} className={card.hrefClassName}>{card.title}</Link>
-                                            : <a href={card.href} target={card.target} className={card.hrefClassName}>{card.title}</a>
+                                            : <a href={card.href} target={card.target} className={card.hrefClassName} rel="noreferrer">{card.title}</a>
                                     }
                                 </div>
                             </div>
