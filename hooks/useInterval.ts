@@ -2,7 +2,7 @@
 
 import {useEffect, useRef} from "react";
 
-export default function UseInterval(callback: Function, delay?: number | null) {
+export default function useInterval(callback: Function, delay?: number | null) {
     const savedCallback = useRef<Function>(() => {});
 
     useEffect(() => {
