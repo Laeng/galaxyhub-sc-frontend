@@ -2,18 +2,23 @@
 
 import classNames from "classnames";
 import {useRef, useState} from "react";
-
 import GalaxyhubLogo from "../brands/galaxyhub-logo";
-import ElementObserver from "../utiles/elementObserver";
 import hash from "../utiles/hash";
 import LinkButton from "../bottons/link-button";
+import useIntersection from "../../hooks/useIntersection";
 
-export default function HeaderSection() {
-    const [isVisibleTitleArea, setVisibleTitleArea] = useState(true);
+interface props {
+    textColor?: 'black'|'white'
+}
+
+export default function HeaderSection({textColor = 'black'}: props) {
     const [isVisibleNavigation, setVisibleNavigation] = useState(false);
     const headerMenuTitle = useRef<HTMLDivElement>(null);
-
-    ElementObserver(headerMenuTitle, setVisibleTitleArea);
+    const isVisibleTitleArea = useIntersection(headerMenuTitle, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0
+    })?.isIntersecting;
 
     let menus = [
         {
@@ -62,7 +67,7 @@ export default function HeaderSection() {
         <section className="absolute flex justify-center w-full z-10">
             <div className={classNames(
                 'container fixed bg-041bed border-b border-gray-800 z-20',
-                'md:relative md:bg-transparent md:dark:bg-transparent md:border-0 md:z-0 '
+                'md:relative md:bg-transparent md:dark:bg-transparent md:border-0 md:z-0 md:pb-0'
             )}>
                 <div className={classNames(
                     'flex justify-between items-center w-full',
@@ -73,7 +78,10 @@ export default function HeaderSection() {
                     )}>
                         <div className={classNames(
                             'flex space-x-1 text-white font-medium text-lg',
-                            'md:block md:space-x-0 md:text-041bed md:font-black md:text-4xl md:space-y-0 dark:md:text-white'
+                            'md:block md:space-x-0 md:font-black md:text-4xl md:space-y-0 dark:md:text-white',
+                            {
+                                'md:text-041bed' : textColor === 'black'
+                            }
                         )}>
                             <p className={classNames(
                                 'md:leading-none'
@@ -88,7 +96,11 @@ export default function HeaderSection() {
                         </div>
                         <LinkButton href={'http://galaxyhub.kr'} target={'_blank'} className={classNames(
                             'hidden mix-blend-multiply group rounded-md border border-gray-400/50 py-2.5 px-3.5 dark:md:text-white',
-                            'md:block dark:md:text-white'
+                            'md:block dark:md:text-white',
+                            {
+                                'md:text-gray-200': textColor === 'white',
+                                'md:text-041bed': textColor === 'black'
+                            }
                         )}>
                             <p className={classNames(
                                 'font-medium text-xs mb-0.5'
@@ -121,7 +133,7 @@ export default function HeaderSection() {
                         </button>
                         <div className={classNames(
                             'absolute top-0 left-0 transition-transform duration-200 overflow-hidden z-30',
-                            'md:py-4 md:transition-none md:w-full',
+                            'md:py-2 md:transition-none md:w-full',
                             {
                                 'md:relative md:top-auto md:left-auto': isVisibleTitleArea,
 
@@ -167,7 +179,11 @@ export default function HeaderSection() {
                                 )}>
                                     <ul className={classNames(
                                         'navigation w-full text-center border-b border-gray-300 dark:border-gray-700 font-medium',
-                                        'md:flex md:items-center md:border-0 dark:md:text-white'
+                                        'md:flex md:items-center md:border-0 dark:md:text-white',
+                                        {
+                                            'md:text-white': textColor === 'white' && isVisibleTitleArea,
+                                            'md:text-041bed': textColor === 'black' || !isVisibleTitleArea,
+                                        }
                                     )}>
                                         {Object.values(menus).map((menu, id) => (
                                             <li key={hash(menu.title)} className={classNames(
