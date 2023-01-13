@@ -9,9 +9,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <head/>
             <body>
                 <main className={classNames(
-                    'relative min-h-screen bg-gray-200 dark:bg-041bed'
+                    'relative flex flex-col min-h-screen bg-gray-200 dark:bg-041bed'
                 )}>
-                    <HeaderSection/>
                     {children}
                 </main>
             </body>
