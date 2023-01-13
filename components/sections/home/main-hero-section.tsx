@@ -6,6 +6,7 @@ import DisclaimerDocument from "../../documents/disclaimer-document";
 import TranslationProgressDocument from "../../documents/translation-progress-document";
 import TranslationVersionDocument from "../../documents/translation-version-document";
 import LinkButton from "../../bottons/link-button";
+import CopyrightDocument from "../../documents/copyright-document";
 
 export default function MainHeroSection() {
 
@@ -61,7 +62,7 @@ export default function MainHeroSection() {
             <div className={classNames(
                 'container mt-16',
                 'sm:pb-8',
-                'md:mt-44',
+                'md:mt-36 md:pt-7',
                 'xl:pb-6'
             )}>
                 <div className={classNames(
@@ -120,11 +121,7 @@ export default function MainHeroSection() {
                         'lg:col-span-12 lg:row-span-1 lg:p-8 lg:border-0'
                     )}>
                         <DisclaimerDocument/>
-                        <p className={classNames(
-                            'mt-2 text-sm text-gray-700 dark:text-gray-400'
-                        )}>
-                            © 2020 스타 시티즌 유저 한국어 프로젝트 All rights reserved.
-                        </p>
+                        <CopyrightDocument/>
                     </RoundedXlCard>
                 </div>
             </div>
