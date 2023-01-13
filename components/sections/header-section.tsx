@@ -61,7 +61,7 @@ export default function HeaderSection() {
     return (
         <section className="absolute flex justify-center w-full z-10">
             <div className={classNames(
-                'container bg-041bed border-b border-gray-800 z-20',
+                'container fixed bg-041bed border-b border-gray-800 z-20',
                 'md:bg-transparent md:dark:bg-transparent md:border-0 md:z-0 '
             )}>
                 <div className={classNames(
