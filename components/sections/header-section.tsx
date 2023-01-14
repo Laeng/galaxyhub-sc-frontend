@@ -6,6 +6,7 @@ import GalaxyhubLogo from "../brands/galaxyhub-logo";
 import hash from "../utiles/hash";
 import LinkButton from "../bottons/link-button";
 import useIntersection from "../../hooks/useIntersection";
+import Link from "next/link";
 
 interface props {
     textColor?: 'black'|'white'
@@ -58,7 +59,7 @@ export default function HeaderSection({textColor = 'black'}: props) {
         },
         {
             title: '다운로드',
-            href: '#',
+            href: '/download',
             className: 'md:float-left md:flex md:items-center md:justify-center md:btn md:btn-blue md:rounded-full md:h-9'
         }
     ];
@@ -76,7 +77,7 @@ export default function HeaderSection({textColor = 'black'}: props) {
                     <div ref={headerMenuTitle} className={classNames(
                         'md:flex md:items-end md:justify-between md:pt-4'
                     )}>
-                        <div className={classNames(
+                        <LinkButton href={'/'} className={classNames(
                             'flex space-x-1 text-white font-medium text-lg',
                             'md:block md:space-x-0 md:font-black md:text-4xl md:space-y-0 dark:md:text-white',
                             {
@@ -93,7 +94,7 @@ export default function HeaderSection({textColor = 'black'}: props) {
                             )}>
                                 유저 한국어 프로젝트
                             </p>
-                        </div>
+                        </LinkButton>
                         <LinkButton href={'http://galaxyhub.kr'} target={'_blank'} className={classNames(
                             'hidden mix-blend-multiply group rounded-md border border-gray-400/50 py-2.5 px-3.5 dark:md:text-white',
                             'md:block dark:md:text-white',
