@@ -68,14 +68,14 @@ export default function HeaderSection({textColor = 'black'}: props) {
         <section className="absolute flex justify-center w-full z-10">
             <div className={classNames(
                 'container fixed bg-041bed border-b border-gray-800 z-20',
-                'md:relative md:bg-transparent md:dark:bg-transparent md:border-0 md:z-0 md:pb-0'
+                'md:relative md:bg-transparent md:dark:bg-transparent md:border-0 md:z-0 md:pb-0 md:px-6'
             )}>
                 <div className={classNames(
                     'flex justify-between items-center w-full',
                     'md:block'
                 )}>
                     <div ref={headerMenuTitle} className={classNames(
-                        'md:flex md:items-end md:justify-between md:pt-4'
+                        'md:flex md:items-end md:justify-between md:pt-4 md:px-2'
                     )}>
                         <LinkButton href={'/'} className={classNames(
                             'flex space-x-1 text-white font-medium text-lg',
@@ -180,7 +180,7 @@ export default function HeaderSection({textColor = 'black'}: props) {
                                 )}>
                                     <ul className={classNames(
                                         'navigation w-full text-center border-b border-gray-300 dark:border-gray-700 font-medium',
-                                        'md:flex md:items-center md:border-0 dark:md:text-white',
+                                        'md:flex md:items-center md:border-0 dark:md:text-white md:px-2',
                                         {
                                             'md:text-white': textColor === 'white' && isVisibleTitleArea,
                                             'md:text-041bed': textColor === 'black' || !isVisibleTitleArea,

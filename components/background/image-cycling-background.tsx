@@ -21,11 +21,15 @@ export default function ImageCyclingBackground({children, src, layers, className
     }, 5 * 1000);
 
     return (
-        <div style={{backgroundImage: `url('${layerSrc}'), url('${src}')`}} className={classNames(
-            'bg-cover bg-center bg-fixed',
-            className
+        <div style={{backgroundImage: `url('${src}')`}} className={classNames(
+            'bg-cover bg-center bg-fixed'
         )}>
-            { children }
+            <div style={{backgroundImage: `url('${layerSrc}')`}} className={classNames(
+                'bg-cover bg-center bg-fixed',
+                className
+            )}>
+                { children }
+            </div>
         </div>
     )
 }

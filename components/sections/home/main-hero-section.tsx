@@ -1,16 +1,16 @@
 import classNames from "classnames";
-import hash from "../../utiles/hash";
-import Link from "next/link";
 import RoundedXlCard from "../../cards/rounded-xl-card";
 import DisclaimerDocument from "../../documents/disclaimer-document";
 import TranslationProgressDocument from "../../documents/translation-progress-document";
 import TranslationVersionDocument from "../../documents/translation-version-document";
-import LinkButton from "../../bottons/link-button";
 import CopyrightDocument from "../../documents/copyright-document";
+import MainHeroCardsComponent from "./main-hero-cards-component";
+
+import {infoCard} from "./main-hero-cards-component";
 
 export default function MainHeroSection() {
 
-    const cards = [
+    const cards: infoCard[] = [
         {
             'description': '유저 한국어 프로젝트를 도와주신 분들과 제작 참여자를 소개합니다.',
             'title': '바로가기',
@@ -43,7 +43,7 @@ export default function MainHeroSection() {
             'description': '유저 한국어 패치를 편리하게 적용할 수 있도록 도와드립니다.',
             'title': '다운로드',
             'target': '_self',
-            'href': '#',
+            'href': '/download',
             'hrefClassName': 'btn btn-blue rounded-full'
         },
         {
@@ -52,7 +52,7 @@ export default function MainHeroSection() {
             'target': '_blank',
             'href': '#',
             'hrefClassName': 'btn btn-indigo bg-[#5865F2] rounded-full'
-        },
+        }
     ];
 
     return (
@@ -85,37 +85,7 @@ export default function MainHeroSection() {
                     )}>
                         <TranslationVersionDocument/>
                     </RoundedXlCard>
-
-                    {Object.values(cards).map((card, id) => (
-                        <RoundedXlCard key={hash(card.title)} className={classNames(
-                            'lg:col-span-4 lg:border-0',
-                            'xl:p-8',
-                            {
-                                'md:row-span-2': id == 3
-                            }
-                        )}>
-                            <div className={classNames(
-                                'flex flex-col h-28',
-                                {
-                                    'md:h-full': id === 3
-                                }
-                            )}>
-                                <p className={classNames(
-
-                                )}>
-                                    {card.description}
-                                </p>
-                                <div className={classNames(
-                                    'mt-auto mb-2'
-                                )}>
-                                    <LinkButton className={card.hrefClassName} href={card.href} target={card.target}>
-                                        { card.title }
-                                    </LinkButton>
-                                </div>
-                            </div>
-                        </RoundedXlCard>
-                    ))}
-
+                    <MainHeroCardsComponent data={cards}/>
                     <RoundedXlCard className={classNames(
                         'md:col-span-3',
                         'lg:col-span-12 lg:row-span-1 lg:p-8 lg:border-0'
