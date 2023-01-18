@@ -1,14 +1,14 @@
 import classNames from "classnames";
-import RoundedXlCard from "../../cards/rounded-xl-card";
+import HomeCard from "../../cards/home-card";
 import DisclaimerDocument from "../../documents/disclaimer-document";
 import TranslationProgressDocument from "../../documents/translation-progress-document";
 import TranslationVersionDocument from "../../documents/translation-version-document";
 import CopyrightDocument from "../../documents/copyright-document";
-import MainHeroCardsComponent from "./main-hero-cards-component";
+import HomeHeroCardsComponent from "./home-hero-cards-component";
 
-import {infoCard} from "./main-hero-cards-component";
+import {infoCard} from "./home-hero-cards-component";
 
-export default function MainHeroSection() {
+export default function HomeHeroSection() {
 
     const cards: infoCard[] = [
         {
@@ -48,7 +48,7 @@ export default function MainHeroSection() {
         },
         {
             'description': '문제를 해결하고 스타 시티즌에 대해 함께 이야기할 수 있습니다.',
-            'title': 'Discord',
+            'title': '디스코드',
             'target': '_blank',
             'href': '#',
             'hrefClassName': 'btn btn-indigo bg-[#5865F2] rounded-full'
@@ -67,32 +67,32 @@ export default function MainHeroSection() {
             )}>
                 <div className={classNames(
                     'grid grid-cols-1 gap-4 text-041bed dark:text-white',
-                    'md:grid-cols-3 md:p-1 md:gap-1 md:rounded-2xl md:bg-041bed dark:md:bg-white',
+                    'md:grid-cols-3',
                     'lg:grid-cols-12'
                 )}>
-                    <RoundedXlCard className={classNames(
-                        'flex flex-col',
+                    <HomeCard className={classNames(
+                        'p-4 rounded-xl bg-white dark:bg-222222 flex flex-col',
                         'md:col-span-3',
-                        'lg:col-span-8 lg:row-span-2 lg:border-0',
+                        'lg:col-span-8 lg:row-span-2',
                         'xl:p-8'
                     )}>
                         <TranslationProgressDocument/>
-                    </RoundedXlCard>
-                    <RoundedXlCard className={classNames(
+                    </HomeCard>
+                    <HomeCard className={classNames(
                         'md:col-span-2',
-                        'lg:col-span-4 lg:flex lg:items-center lg:border-0',
+                        'lg:col-span-4 lg:flex lg:items-center',
                         'xl:p-8'
                     )}>
                         <TranslationVersionDocument/>
-                    </RoundedXlCard>
-                    <MainHeroCardsComponent data={cards}/>
-                    <RoundedXlCard className={classNames(
+                    </HomeCard>
+                    <HomeHeroCardsComponent data={cards}/>
+                    <HomeCard className={classNames(
                         'md:col-span-3',
-                        'lg:col-span-12 lg:row-span-1 lg:p-8 lg:border-0'
+                        'lg:col-span-12 lg:row-span-1 lg:p-8'
                     )}>
                         <DisclaimerDocument/>
                         <CopyrightDocument/>
-                    </RoundedXlCard>
+                    </HomeCard>
                 </div>
             </div>
         </section>

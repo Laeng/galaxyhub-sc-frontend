@@ -11,7 +11,7 @@ interface props {
     layers: string[]
 }
 
-export default function ImageCyclingBackground({children, src, layers, className = ''}: props) {
+export default function CyclingImage({children, src, layers, className = ''}: props) {
     const [layerIndex, setLayerIndex] = useState(0);
     const [layerSrc, setLayerSrc] = useState(layers[0]);
 

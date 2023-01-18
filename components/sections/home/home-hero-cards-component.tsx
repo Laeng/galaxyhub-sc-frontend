@@ -1,6 +1,6 @@
 'use client'
 
-import RoundedXlCard from "../../cards/rounded-xl-card";
+import HomeCard from "../../cards/home-card";
 import hash from "../../utiles/hash";
 import classNames from "classnames";
 import LinkButton from "../../bottons/link-button";
@@ -18,14 +18,14 @@ export interface infoCard {
     target: string
 }
 
-export default function MainHeroCardsComponent({data}: props) {
+export default function HomeHeroCardsComponent({data}: props) {
     const [cards] = useState(data);
 
     return (
         <>
             {Object.values(cards).map((card, id) => (
-                <RoundedXlCard key={hash(card.title)} className={classNames(
-                    'lg:col-span-4 lg:border-0',
+                <HomeCard key={hash(card.title)} className={classNames(
+                    'lg:col-span-4',
                     'xl:p-8',
                     {
                         'md:row-span-2': id == 3
@@ -50,7 +50,7 @@ export default function MainHeroCardsComponent({data}: props) {
                             </LinkButton>
                         </div>
                     </div>
-                </RoundedXlCard>
+                </HomeCard>
             ))}
         </>
     );

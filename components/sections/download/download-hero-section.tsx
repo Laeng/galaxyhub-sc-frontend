@@ -1,24 +1,24 @@
 import classNames from "classnames";
-import ImageCyclingBackground from "../../background/image-cycling-background";
+import CyclingImage from "../../image/cycling-image";
 import LinkButton from "../../bottons/link-button";
 
 export default function DownloadHeroSection() {
-    const backgroundSrc = '/images/bg-download.jpg'
+    const backgroundSrc = '/images/download/hero-bg.jpg'
     const backgroundLayers = [
-        '/images/bg-download-0.png',
-        '/images/bg-download-1.png'
+        '/images/download/hero-bg-0.png',
+        '/images/download/hero-bg-1.png'
     ];
 
     return (
         <section className={classNames(
-
+            'bg-[#18120F]'
         )}>
-            <ImageCyclingBackground src={backgroundSrc} layers={backgroundLayers}>
+            <CyclingImage src={backgroundSrc} layers={backgroundLayers}>
                 <div className={classNames(
                     'bg-black/20'
                 )}>
                     <div className={classNames(
-                        'container min-h-screen items-center'
+                        'container flex items-center min-h-screen',
                     )}>
                         <div className={classNames(
                             'mx-8',
@@ -26,16 +26,16 @@ export default function DownloadHeroSection() {
                             'lg:px-16'
                         )}>
                             <ul className={classNames(
-                                'font-black text-4xl text-white leading-tight',
+                                'font-black text-4xl text-white leading-normal',
                                 'lg:text-6xl',
                             )}>
                                 <li>한국어로 즐기는</li>
                                 <li>스타 시티즌</li>
                             </ul>
                             <p className={classNames(
-                                'py-4 font-medium text-lg text-gray-100',
+                                'py-4 font-medium text-lg text-gray-100 break-words',
                                 'md:w-2/3',
-                                'lg:w-1/2 lg:text-xl'
+                                'lg:text-xl'
                             )}>
                                 샤타곤 패쳐를 통해 스타 시티즌 유저 한국어 패치를 간편하고 빠르게 설치할 수 있습니다.
                                 프로그램 사용 전 반드시 사용 방법을 확인해 주세요!
@@ -59,7 +59,7 @@ export default function DownloadHeroSection() {
                         </div>
                     </div>
                 </div>
-            </ImageCyclingBackground>
+            </CyclingImage>
         </section>
     );
 }
