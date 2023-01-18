@@ -67,7 +67,7 @@ export default function HeaderSection({textColor = 'black'}: props) {
     return (
         <section className="absolute flex justify-center w-full z-10">
             <div className={classNames(
-                'container fixed bg-041bed border-b border-gray-800 z-20',
+                'container fixed bg-222222 border-b border-gray-800 z-20',
                 'md:relative md:bg-transparent md:dark:bg-transparent md:border-0 md:z-0 md:pb-0 md:px-6'
             )}>
                 <div className={classNames(
@@ -139,7 +139,7 @@ export default function HeaderSection({textColor = 'black'}: props) {
                                 'md:relative md:top-auto md:left-auto': isVisibleTitleArea,
 
                                 'py-4': !isVisibleTitleArea,
-                                'md:fixed md:left-auto md:bg-gray-200 md:dark:bg-041bed md:border-b md:border-gray-300 md:dark:border-gray-700': !isVisibleTitleArea,
+                                'md:fixed md:left-auto md:bg-gray-200 md:dark:bg-222222 md:border-b md:border-gray-300 md:dark:border-white/10': !isVisibleTitleArea,
 
                                 'translate-y-0 opacity-100 w-full': isVisibleNavigation,
                                 'md:w-auto': isVisibleNavigation,
@@ -149,10 +149,10 @@ export default function HeaderSection({textColor = 'black'}: props) {
                             }
                         )}>
                             <div className={classNames(
-                                'rounded-t-2xl border-t border-gray-300 dark:border-gray-700 bg-white dark:bg-041bed',
+                                'rounded-t-2xl border-t border-gray-300 dark:border-gray-700 bg-white dark:bg-222222',
                                 'md:p-0 md:items-end md:rounded-none md:border-0 md:bg-transparent',
                                 {
-                                    'md:max-w-6xl md:mx-auto md:px-8': !isVisibleTitleArea
+                                    'md:max-w-6xl md:mx-auto md:px-6': !isVisibleTitleArea
                                 }
                             )}>
                                 <div className={classNames(
@@ -179,7 +179,7 @@ export default function HeaderSection({textColor = 'black'}: props) {
                                     'md:h-auto md:max-h-fit'
                                 )}>
                                     <ul className={classNames(
-                                        'navigation w-full text-center border-b border-gray-300 dark:border-gray-700 font-medium',
+                                        'navigation w-full text-center border-b border-gray-300 dark:border-white/10 font-medium',
                                         'md:flex md:items-center md:border-0 dark:md:text-white md:px-2',
                                         {
                                             'md:text-white': textColor === 'white' && isVisibleTitleArea,
@@ -188,7 +188,7 @@ export default function HeaderSection({textColor = 'black'}: props) {
                                     )}>
                                         {Object.values(menus).map((menu, id) => (
                                             <li key={hash(menu.title)} className={classNames(
-                                                'flex group text-lg py-2 border-t md:border-0 border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-white',
+                                                'flex group text-lg py-2 border-t md:border-0 border-gray-300 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 dark:text-white',
                                                 'md:block md:float-left md:text-base md:hover:bg-transparent',
                                                 {
                                                     'md:pr-4': id !== menus.length - 1,
@@ -206,7 +206,7 @@ export default function HeaderSection({textColor = 'black'}: props) {
 
                                     </ul>
                                     <div className={classNames(
-                                        'flex justify-center group my-2 dark:text-gray-500',
+                                        'flex justify-center group my-2 dark:text-gray-300',
                                         'md:hidden'
                                     )}>
                                         <div className={classNames(
