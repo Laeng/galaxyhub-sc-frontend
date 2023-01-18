@@ -10,7 +10,7 @@ export default function DownloadLayout({ children }: { children: ReactNode }) {
             <HeaderSection textColor={'white'}/>
             {children}
             <div className={classNames(
-                'container mt-auto flex-col'
+                'container mt-auto flex-col text-041b2d dark:text-white'
             )}>
                 <DisclaimerDocument/>
                 <CopyrightDocument/>

@@ -13,6 +13,7 @@ module.exports = {
         sans: ['Pretendard', ...defaultTheme.fontFamily.sans],
       },
       colors: {
+        '222222': '#222222',
         '041bed': '#041b2d',
         '004e9a': '#004e9a',
         '428cd4': '#428cd4',
